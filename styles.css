@@ -102,7 +102,7 @@ header a:hover {
   left: 0;
   right: 0;
   bottom: 0;
-  background: url('../img/insert-image-html.jpg') no-repeat center center/cover;
+  background: url('img/insert-image-html.jpg') no-repeat center center/cover;
   filter: blur(5px);
   z-index: 0;
 }
