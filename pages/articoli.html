@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Articoli - Il Tuo Nome Professional</title>
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+        <div class="dark-mode-switch">
+        <label class="switch">
+            <input type="checkbox" id="darkModeToggle">
+            <span class="slider"></span>
+        </label>
+    </div>
+    <header>
+        <div class="container">
+            <div id="branding">
+                <h1><span class="highlight">Il Tuo Nome</span> Professional</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li class="current"><a href="articoli.html">Articoli</a></li>
+                    <li><a href="case-studies.html">Case Studies</a></li>
+                    <li><a href="testimonianze.html">Testimonianze</a></li>
+                    <li><a href="contatti.html">Contatti</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="page-title">
+        <div class="container">
+            <h1>I Miei Articoli</h1>
+        </div>
+    </section>
+
+    <section id="articles">
+        <div class="container">
+            <article class="article">
+                <h2>Le Ultime Tendenze nel Marketing Digitale per il 2024</h2>
+                <div class="article-meta">
+                    <span class="date">Pubblicato il 14 Luglio 2024</span> |
+                    <span class="category">Categoria: Marketing Digitale</span>
+                </div>
+                <p>Il mondo del marketing digitale è in continua evoluzione. In questo articolo, esploreremo le tendenze più recenti che stanno plasmando il settore nel 2024. Dall'intelligenza artificiale al marketing conversazionale, scopriremo come le aziende stanno adattando le loro strategie per rimanere competitive in un panorama digitale sempre più complesso.</p>
+                <a href="#" class="read-more">Leggi l'articolo completo</a>
+            </article>
+
+            <article class="article">
+                <h2>Come Ottimizzare la Tua Strategia SEO nel 2024</h2>
+                <div class="article-meta">
+                    <span class="date">Pubblicato il 7 Luglio 2024</span> |
+                    <span class="category">Categoria: SEO</span>
+                </div>
+                <p>La Search Engine Optimization (SEO) rimane un aspetto cruciale del marketing digitale. Questo articolo fornisce una guida completa su come adattare la tua strategia SEO alle ultime modifiche degli algoritmi dei motori di ricerca. Dall'ottimizzazione per la ricerca vocale all'importanza crescente dei contenuti E-A-T (Expertise, Authoritativeness, Trustworthiness), scoprirai come migliorare la visibilità del tuo sito web.</p>
+                <a href="#" class="read-more">Leggi l'articolo completo</a>
+            </article>
+
+            <article class="article">
+                <h2>L'Importanza dell'Analisi dei Dati nel Business Moderno</h2>
+                <div class="article-meta">
+                    <span class="date">Pubblicato il 1 Luglio 2024</span> |
+                    <span class="category">Categoria: Business Intelligence</span>
+                </div>
+                <p>Nell'era digitale, i dati sono la nuova valuta. Questo articolo esplora come l'analisi dei dati sta trasformando il modo in cui le aziende prendono decisioni. Dalla previsione delle tendenze di mercato all'ottimizzazione delle operazioni interne, scopriremo come l'analisi dei dati può fornire un vantaggio competitivo significativo in quasi ogni settore.</p>
+                <a href="#" class="read-more">Leggi l'articolo completo</a>
+            </article>
+        </div>
+    </section>
+
+    <footer>
+        <p>Il Tuo Nome Professional, Copyright &copy; 2024</p>
+    </footer>
+    <script>
+        const darkModeToggle = document.getElementById('darkModeToggle');
+        const html = document.documentElement;
+
+        darkModeToggle.addEventListener('change', () => {
+            if (darkModeToggle.checked) {
+                html.setAttribute('data-theme', 'dark');
+                localStorage.setItem('theme', 'dark');
+            } else {
+                html.setAttribute('data-theme', 'light');
+                localStorage.setItem('theme', 'light');
+            }
+        });
+
+        // Check for saved theme preference or respect OS preference
+        const savedTheme = localStorage.getItem('theme');
+        const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+        if (savedTheme === 'dark' || (savedTheme === null && prefersDark)) {
+            html.setAttribute('data-theme', 'dark');
+            darkModeToggle.checked = true;
+        }
+    </script>
+</body>
+</html>

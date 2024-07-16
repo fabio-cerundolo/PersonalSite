@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="it" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Il Tuo Nome - Sito Personale e Professionale</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="dark-mode-switch">
+        <label class="switch">
+            <input type="checkbox" id="darkModeToggle">
+            <span class="slider"></span>
+        </label>
+    </div>
+
+    <header>
+        <div class="container">
+            <div id="branding">
+                <h1><span class="highlight">Il Tuo Nome</span> Professional</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li class="current"><a href="index.html">Home</a></li>
+                    <li><a href="pages/articoli.html">Articoli</a></li>
+                    <li><a href="pages/case-studies.html">Case Studies</a></li>
+                    <li><a href="pages/testimonianze.html">Testimonianze</a></li>
+                    <li><a href="pages/contatti.html">Contatti</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="showcase">
+        <div class="container">
+            <h1>Benvenuto nel Mio Sito Professionale</h1>
+            <p>Esplora i miei articoli, case studies e testimonianze dei clienti per scoprire come posso aiutare la tua azienda a crescere.</p>
+        </div>
+    </section>
+
+    <section id="boxes">
+        <div class="container">
+            <div class="box">
+                <a href="pages/articoli.html"><img src="img/article-icon-png-27.jpg" alt="Articoli"></a>
+                
+                <h3>Articoli</h3>
+                <p>Leggi i miei articoli su argomenti professionali e di settore.</p>
+            </div>
+            <div class="box">
+                <a href="pages/case-studies.html"><img src="img/Agile-3_-_Black_fill-36-512.webp" alt="Case Studies"></a>
+                
+                <h3>Case Studies</h3>
+                <p>Esplora i progetti di successo che ho realizzato per i miei clienti.</p>
+            </div>
+            <div class="box">
+                <a href="pages/testimonianze.html"><img src="img/792101.png" alt="Testimonianze"></a>
+                
+                <h3>Testimonianze</h3>
+                <p>Scopri cosa dicono i miei clienti sulla mia professionalità e i risultati ottenuti.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>Il Tuo Nome Professional, Copyright &copy; 2024</p>
+    </footer>
+
+    <script>
+        const darkModeToggle = document.getElementById('darkModeToggle');
+        const html = document.documentElement;
+
+        darkModeToggle.addEventListener('change', () => {
+            if (darkModeToggle.checked) {
+                html.setAttribute('data-theme', 'dark');
+                localStorage.setItem('theme', 'dark');
+            } else {
+                html.setAttribute('data-theme', 'light');
+                localStorage.setItem('theme', 'light');
+            }
+        });
+
+        // Check for saved theme preference or respect OS preference
+        const savedTheme = localStorage.getItem('theme');
+        const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+        if (savedTheme === 'dark' || (savedTheme === null && prefersDark)) {
+            html.setAttribute('data-theme', 'dark');
+            darkModeToggle.checked = true;
+        }
+    </script>
+</body>
+</html>

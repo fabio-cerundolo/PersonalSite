@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Testimonianze - Il Tuo Nome Professional</title>
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <header>
+        <div class="dark-mode-switch">
+            <label class="switch">
+                <input type="checkbox" id="darkModeToggle">
+                <span class="slider"></span>
+            </label>
+        </div>
+        <div class="container">
+            <div id="branding">
+                <h1><span class="highlight">Il Tuo Nome</span> Professional</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="articoli.html">Articoli</a></li>
+                    <li><a href="case-studies.html">Case Studies</a></li>
+                    <li class="current"><a href="testimonianze.html">Testimonianze</a></li>
+                    <li><a href="contatti.html">Contatti</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="page-title">
+        <div class="container">
+            <h1>Testimonianze dei Clienti</h1>
+        </div>
+    </section>
+
+    <section id="testimonials">
+        <div class="container">
+            <div class="testimonial">
+                <div class="testimonial-image">
+                    <img src="/api/placeholder/100/100" alt="Maria Rossi">
+                </div>
+                <div class="testimonial-content">
+                    <blockquote>
+                        "Il Tuo Nome ha trasformato completamente il nostro approccio al marketing digitale. La sua competenza e dedizione hanno superato ogni nostra aspettativa. I risultati parlano da soli: abbiamo visto un aumento del 200% nel nostro traffico organico e un incremento significativo nelle conversioni. Non posso raccomandarlo abbastanza!"
+                    </blockquote>
+                    <p class="testimonial-author">Maria Rossi</p>
+                    <p class="testimonial-meta">CEO, Azienda XYZ</p>
+                </div>
+            </div>
+
+            <div class="testimonial">
+                <div class="testimonial-image">
+                    <img src="/api/placeholder/100/100" alt="Luigi Bianchi">
+                </div>
+                <div class="testimonial-content">
+                    <blockquote>
+                        "Lavorare con Il Tuo Nome è stata un'esperienza eccezionale. La sua capacità di comprendere le nostre esigenze aziendali e tradurle in una strategia di marketing efficace è stata impressionante. Grazie al suo lavoro, abbiamo non solo raggiunto ma superato i nostri obiettivi di crescita per quest'anno."
+                    </blockquote>
+                    <p class="testimonial-author">Luigi Bianchi</p>
+                    <p class="testimonial-meta">Direttore Marketing, TechNova</p>
+                </div>
+            </div>
+
+            <div class="testimonial">
+                <div class="testimonial-image">
+                    <img src="/api/placeholder/100/100" alt="Giulia Verdi">
+                </div>
+                <div class="testimonial-content">
+                    <blockquote>
+                        "Il Tuo Nome ha portato una freschezza e un'innovazione che mancavano alla nostra strategia di social media. La sua campagna per il lancio del nostro nuovo prodotto ha generato un buzz incredibile e ha superato tutte le nostre aspettative in termini di engagement e conversioni. È un vero professionista nel suo campo."
+                    </blockquote>
+                    <p class="testimonial-author">Giulia Verdi</p>
+                    <p class="testimonial-meta">Responsabile Comunicazione, FreshFoods</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>Il Tuo Nome Professional, Copyright &copy; 2024</p>
+    </footer>
+    <script>
+        const darkModeToggle = document.getElementById('darkModeToggle');
+        const html = document.documentElement;
+
+        darkModeToggle.addEventListener('change', () => {
+            if (darkModeToggle.checked) {
+                html.setAttribute('data-theme', 'dark');
+                localStorage.setItem('theme', 'dark');
+            } else {
+                html.setAttribute('data-theme', 'light');
+                localStorage.setItem('theme', 'light');
+            }
+        });
+
+        // Check for saved theme preference or respect OS preference
+        const savedTheme = localStorage.getItem('theme');
+        const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+        if (savedTheme === 'dark' || (savedTheme === null && prefersDark)) {
+            html.setAttribute('data-theme', 'dark');
+            darkModeToggle.checked = true;
+        }
+    </script>
+</body>
+</html>

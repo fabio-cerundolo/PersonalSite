@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="it" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Il Tuo Nome - Contatti</title>
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <!-- Interruttore per la modalità scura -->
+    <div class="dark-mode-switch">
+        <label class="switch">
+            <input type="checkbox" id="darkModeToggle">
+            <span class="slider"></span>
+        </label>
+    </div>
+
+    <header>
+        <div class="container">
+            <!-- Branding dell'header -->
+            <div id="branding">
+                <h1><span class="highlight">Il Tuo Nome</span> Professional</h1>
+            </div>
+            <!-- Menu di navigazione -->
+            <nav>
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="articoli.html">Articoli</a></li>
+                    <li><a href="case-studies.html">Case Studies</a></li>
+                    <li><a href="testimonianze.html">Testimonianze</a></li>
+                    <li class="current"><a href="contatti.html">Contatti</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="showcase">
+        <div class="container">
+            <h1>Contattami</h1>
+            <p>Per qualsiasi domanda o richiesta, sentiti libero di contattarmi utilizzando il modulo sottostante.</p>
+        </div>
+    </section>
+
+    <!-- Sezione del modulo di contatto -->
+    <section id="contact-form">
+        <div class="container">
+            <form action="contact_form.php" method="post">
+                <div class="form-group">
+                    <label for="name">Nome:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Messaggio:</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+                </div>
+                <button type="submit">Invia</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Sezione delle informazioni di contatto -->
+    <section id="contact-info">
+        <div class="container">
+            <h2>Informazioni di Contatto</h2>
+            <p>Email: <a href="mailto:tuoemail@example.com">tuoemail@example.com</a></p>
+            <p>Telefono: +39 123 456 7890</p>
+            <p>Indirizzo: Via Roma 123, 00100 Roma, Italia</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>Il Tuo Nome Professional, Copyright &copy; 2024</p>
+    </footer>
+
+    <script>
+        const darkModeToggle = document.getElementById('darkModeToggle');
+        const html = document.documentElement;
+
+        darkModeToggle.addEventListener('change', () => {
+            if (darkModeToggle.checked) {
+                html.setAttribute('data-theme', 'dark');
+                localStorage.setItem('theme', 'dark');
+            } else {
+                html.setAttribute('data-theme', 'light');
+                localStorage.setItem('theme', 'light');
+            }
+        });
+
+        // Controlla se esiste una preferenza per il tema salvata o rispetta la preferenza del sistema operativo
+        const savedTheme = localStorage.getItem('theme');
+        const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+        if (savedTheme === 'dark' || (savedTheme === null && prefersDark)) {
+            html.setAttribute('data-theme', 'dark');
+            darkModeToggle.checked = true;
+        }
+    </script>
+</body>
+</html>

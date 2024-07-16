@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Case Studies - Il Tuo Nome Professional</title>
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <div class="dark-mode-switch">
+        <label class="switch">
+            <input type="checkbox" id="darkModeToggle">
+            <span class="slider"></span>
+        </label>
+    </div>
+    <header>
+        <div class="container">
+            <div id="branding">
+                <h1><span class="highlight">Il Tuo Nome</span> Professional</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="articoli.html">Articoli</a></li>
+                    <li class="current"><a href="case-studies.html">Case Studies</a></li>
+                    <li><a href="testimonianze.html">Testimonianze</a></li>
+                    <li><a href="contatti.html">Contatti</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="page-title">
+        <div class="container">
+            <h1>I Miei Case Studies</h1>
+        </div>
+    </section>
+
+    <section id="case-studies">
+        <div class="container">
+            <div class="case-study">
+                <h2>Trasformazione Digitale per Azienda XYZ</h2>
+                <div class="case-study-meta">
+                    <span class="client">Cliente: Azienda XYZ</span> |
+                    <span class="industry">Settore: E-commerce</span> |
+                    <span class="date">Completato: Giugno 2024</span>
+                </div>
+                <div class="case-study-summary">
+                    <p>Azienda XYZ, un rivenditore tradizionale, cercava di espandere la propria presenza online. Abbiamo sviluppato e implementato una strategia di trasformazione digitale completa, che includeva la creazione di una piattaforma e-commerce all'avanguardia e una robusta strategia di marketing digitale.</p>
+                </div>
+                <div class="results">
+                    <h3>Risultati:</h3>
+                    <ul>
+                        <li>Aumento del 150% nelle vendite online nel primo anno</li>
+                        <li>Miglioramento del 40% nella soddisfazione dei clienti</li>
+                        <li>Riduzione del 25% dei costi operativi grazie all'automazione</li>
+                    </ul>
+                </div>
+                <a href="#" class="read-more">Leggi il case study completo</a>
+            </div>
+
+            <div class="case-study">
+                <h2>Ottimizzazione SEO per Start-up Tech</h2>
+                <div class="case-study-meta">
+                    <span class="client">Cliente: TechNova</span> |
+                    <span class="industry">Settore: Tecnologia</span> |
+                    <span class="date">Completato: Aprile 2024</span>
+                </div>
+                <div class="case-study-summary">
+                    <p>TechNova, una start-up nel settore della tecnologia, stava lottando per ottenere visibilità online. Abbiamo sviluppato una strategia SEO completa, che comprendeva l'ottimizzazione on-page, la creazione di contenuti di qualità e la costruzione di backlink.</p>
+                </div>
+                <div class="results">
+                    <h3>Risultati:</h3>
+                    <ul>
+                        <li>Aumento del 200% nel traffico organico in 6 mesi</li>
+                        <li>Miglioramento del posizionamento per le parole chiave target, con il 70% ora in prima pagina</li>
+                        <li>Incremento del 80% nelle lead generate dal sito web</li>
+                    </ul>
+                </div>
+                <a href="#" class="read-more">Leggi il case study completo</a>
+            </div>
+
+            <div class="case-study">
+                <h2>Campagna Social Media per Lancio Prodotto</h2>
+                <div class="case-study-meta">
+                    <span class="client">Cliente: FreshFoods</span> |
+                    <span class="industry">Settore: Alimentare</span> |
+                    <span class="date">Completato: Maggio 2024</span>
+                </div>
+                <div class="case-study-summary">
+                    <p>FreshFoods stava lanciando una nuova linea di prodotti biologici e aveva bisogno di una strategia di social media marketing efficace. Abbiamo creato e implementato una campagna multipiattaforma che includeva contenuti virali, influencer marketing e pubblicità mirata.</p>
+                </div>
+                <div class="results">
+                    <h3>Risultati:</h3>
+                    <ul>
+                        <li>Raggiungimento di oltre 5 milioni di persone sui social media</li>
+                        <li>Aumento del 300% nelle menzioni del brand online</li>
+                        <li>Vendite del nuovo prodotto superiori del 50% rispetto alle proiezioni iniziali</li>
+                    </ul>
+                </div>
+                <a href="#" class="read-more">Leggi il case study completo</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>Il Tuo Nome Professional, Copyright &copy; 2024</p>
+    </footer>
+    <script>
+        const darkModeToggle = document.getElementById('darkModeToggle');
+        const html = document.documentElement;
+
+        darkModeToggle.addEventListener('change', () => {
+            if (darkModeToggle.checked) {
+                html.setAttribute('data-theme', 'dark');
+                localStorage.setItem('theme', 'dark');
+            } else {
+                html.setAttribute('data-theme', 'light');
+                localStorage.setItem('theme', 'light');
+            }
+        });
+
+        // Check for saved theme preference or respect OS preference
+        const savedTheme = localStorage.getItem('theme');
+        const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+        if (savedTheme === 'dark' || (savedTheme === null && prefersDark)) {
+            html.setAttribute('data-theme', 'dark');
+            darkModeToggle.checked = true;
+        }
+    </script>
+</body>
+</html>

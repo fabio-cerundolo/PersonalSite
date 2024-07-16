@@ -1,0 +1,257 @@
+/* Aggiunta delle variabili per i temi chiaro e scuro */
+:root {
+  --bg-color: #ffffff;
+  --text-color: #333333;
+  --header-bg: #50a3a2;
+  --header-text: #ffffff;
+  --accent-color: #e8491d;
+  --section-bg: #f4f4f4;
+  --form-bg: #f4f4f4;  /* Variabile per lo sfondo del form nella modalità chiara */
+}
+
+[data-theme="dark"] {
+  --bg-color: #1a1a1a;
+  --text-color: #ffffff;
+  --header-bg: #2c5c5b;
+  --header-text: #ffffff;
+  --accent-color: #ff6347;
+  --section-bg: #2a2a2a;
+  --form-bg: #333333;  /* Variabile per lo sfondo del form nella modalità scura */
+}
+
+/* Stili generali */
+body {
+  font-family: 'Arial', sans-serif;
+  line-height: 1.6;
+  color: var(--text-color);
+  background-color: var(--bg-color);
+  margin: 0;
+  padding: 0;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.container {
+  width: 80%;
+  margin: auto;
+  overflow: hidden;
+}
+
+/* Stili per l'header */
+header {
+  background: var(--header-bg);
+  color: var(--header-text);
+  padding-top: 30px;
+  min-height: 70px;
+  border-bottom: var(--accent-color) 3px solid;
+}
+
+header a {
+  color: var(--header-text);
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 16px;
+}
+
+header ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+header li {
+  float: left;
+  display: inline;
+  padding: 0 20px 0 20px;
+}
+
+header #branding {
+  float: left;
+}
+
+header #branding h1 {
+  margin: 0;
+}
+
+header nav {
+  float: right;
+  margin-top: 10px;
+}
+
+header .highlight, header .current a {
+  color: var(--accent-color);
+  font-weight: bold;
+}
+
+header a:hover {
+  color: var(--header-text);
+  font-weight: bold;
+}
+
+/* Stili per la sezione showcase */
+#showcase {
+  position: relative;
+  min-height: 400px;
+  text-align: center;
+  color: var(--header-text);
+}
+
+#showcase::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('../img/insert-image-html.jpg') no-repeat center center/cover;
+  filter: blur(5px);
+  z-index: 0;
+}
+
+#showcase .container {
+  position: relative;
+  z-index: 1;
+}
+
+#showcase h1 {
+  margin-top: 100px;
+  font-size: 55px;
+  margin-bottom: 10px;
+}
+
+#showcase p {
+  font-size: 20px;
+}
+
+/* Stili per le sezioni */
+#boxes {
+  margin-top: 20px;
+}
+
+#boxes .box {
+  float: left;
+  text-align: center;
+  width: 30%;
+  padding: 10px;
+}
+
+#boxes .box img {
+  width: 90px;
+  width: 50px;
+}
+
+/* Stili per il footer */
+footer {
+  padding: 20px;
+  margin-top: 20px;
+  color: var(--header-text);
+  background-color: var(--accent-color);
+  text-align: center;
+}
+
+/* Stili per il modulo di contatto */
+#contact-form {
+  background: var(--form-bg);
+  padding: 20px;
+  margin: 20px 0;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#contact-form .form-group {
+  margin-bottom: 15px;
+}
+
+#contact-form label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+#contact-form input,
+#contact-form textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+#contact-form button {
+  background: #333;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+#contact-form button:hover {
+  background: #555;
+}
+
+/* Stile per le informazioni di contatto */
+#contact-info {
+  margin-top: 20px;
+}
+
+#contact-info h2 {
+  margin-bottom: 10px;
+}
+
+#contact-info p {
+  margin: 5px 0;
+}
+
+/* Stili per il dark mode switch */
+.dark-mode-switch {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: .4s;
+  border-radius: 34px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: .4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: var(--accent-color);
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px);
+}
